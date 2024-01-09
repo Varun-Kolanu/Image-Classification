@@ -10,6 +10,7 @@ __classes = None
 
 def get_predicted_class(image_base64):
     image_data = base64.b64decode(image_base64.split(',')[1])
+    print(image_base64.split(',')[0])
     image = Image.open(BytesIO(image_data))
     resized_image = image.resize((32, 32))
     image_array = np.array(resized_image)
